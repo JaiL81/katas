@@ -31,3 +31,16 @@ fun fizzBuzz(i: Int): String {
         else -> i.toString()
     }
 }
+
+fun fizzBuzzArray(n: Int): Array<String> {
+    val result = Array(n) { "" }
+    for (i in 1..n) {
+        when {
+            i % 3 == 0 && i % 5 == 0 -> result[i - 1] = "FizzBuzz"
+            i % 3 == 0 -> result[i - 1] = "Fizz"
+            i % 5 == 0 -> result[i - 1] = "Buzz"
+            else -> result[i - 1] = i.toString()
+        }
+    }
+    return result
+}
